@@ -21,4 +21,22 @@ public class HandicapCalculatorTest extends TestCase {
 		assertEquals(ninetyMetersHcapZero, HandicapCalculator.getRMS(0, 90, false), precision);
 		assertEquals(ninetyMetersHcapForty, HandicapCalculator.getRMS(40, 90, false), precision);
 	}
+	
+	public void testGetFITATenZoneAverageScore() throws Exception {
+		double precision = 0.00001;
+		double portsmouthOneHundredHcapAverage = 0.5737681;
+		double portsmouthZeroHcapAverage = 9.995506;
+		
+		assertEquals(portsmouthOneHundredHcapAverage, HandicapCalculator.getFITATenZoneAverageScore(100, 20, 60, true), precision);
+		assertEquals(portsmouthZeroHcapAverage, HandicapCalculator.getFITATenZoneAverageScore(0, 20, 60, true), precision);
+	}
+	
+	public void testGetImperialAverageScore() throws Exception {
+		double precision = 0.00001;
+		double imperialThirtyYardsHcapZero = 9.0;
+		double imperialThirtyYardsHcapThirtyNine = 8.741725;
+		
+		assertEquals(imperialThirtyYardsHcapZero, HandicapCalculator.getImperialAverageScore(0, 30, 122, true), precision);
+		assertEquals(imperialThirtyYardsHcapThirtyNine, HandicapCalculator.getImperialAverageScore(39, 30, 122, true), precision);
+	}
 }
