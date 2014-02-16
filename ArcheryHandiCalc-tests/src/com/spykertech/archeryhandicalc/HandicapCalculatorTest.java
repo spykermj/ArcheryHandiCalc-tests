@@ -3,6 +3,8 @@ package com.spykertech.archeryhandicalc;
 import junit.framework.TestCase;
 
 public class HandicapCalculatorTest extends TestCase {
+	double precision = 0.00001;
+
 	public void testConvertYardsToMeters() throws Exception {
 		double oneHundredYardsAsMeters = 91.44;
 		
@@ -10,7 +12,6 @@ public class HandicapCalculatorTest extends TestCase {
 	}
 	
 	public void testGetRMS() throws Exception {
-		double precision = 0.00001;
 		double oneHundredYardsHcapZero = 7.330498;
 		double oneHundredYardsHcapForty = 36.79815;
 		double ninetyMetersHcapZero = 7.21151;
@@ -23,7 +24,6 @@ public class HandicapCalculatorTest extends TestCase {
 	}
 	
 	public void testGetFITATenZoneAverageScore() throws Exception {
-		double precision = 0.00001;
 		double portsmouthOneHundredHcapAverage = 0.5737681;
 		double portsmouthZeroHcapAverage = 9.995506;
 		
@@ -32,11 +32,18 @@ public class HandicapCalculatorTest extends TestCase {
 	}
 	
 	public void testGetImperialAverageScore() throws Exception {
-		double precision = 0.00001;
 		double imperialThirtyYardsHcapZero = 9.0;
 		double imperialThirtyYardsHcapThirtyNine = 8.741725;
 		
 		assertEquals(imperialThirtyYardsHcapZero, HandicapCalculator.getImperialAverageScore(0, 30, 122, true), precision);
 		assertEquals(imperialThirtyYardsHcapThirtyNine, HandicapCalculator.getImperialAverageScore(39, 30, 122, true), precision);
+	}
+	
+	public void testGetFITAFiveZoneAverageScore() throws Exception {
+		double portsmouthZeroHcapAverage = 9.995506;
+		double portsmouthThirtyHcapAverage = 9.366739;
+		
+		assertEquals(portsmouthZeroHcapAverage, HandicapCalculator.getFITAFiveZoneAverageScore(0, 20, 60, true), precision);
+		assertEquals(portsmouthThirtyHcapAverage, HandicapCalculator.getFITAFiveZoneAverageScore(30, 20, 60, true), precision);
 	}
 }
