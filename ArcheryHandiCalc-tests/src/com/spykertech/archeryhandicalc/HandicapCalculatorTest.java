@@ -46,4 +46,12 @@ public class HandicapCalculatorTest extends TestCase {
 		assertEquals(portsmouthZeroHcapAverage, HandicapCalculator.getFITAFiveZoneAverageScore(0, 20, 60, true), precision);
 		assertEquals(portsmouthThirtyHcapAverage, HandicapCalculator.getFITAFiveZoneAverageScore(30, 20, 60, true), precision);
 	}
+	
+	public void testGetWorsterAverageScore() throws Exception {
+		double worsterZeroHcapAverage = 4.999915;
+		double worsterThirtyHcapAverage = 4.654914;
+		
+		assertEquals(worsterZeroHcapAverage, HandicapCalculator.getWorsterAverageScore(0, 20, 40.64, true), precision);
+		assertEquals(worsterThirtyHcapAverage, HandicapCalculator.getWorsterAverageScore(30, 20, 40.64, true), precision);
+	}
 }
