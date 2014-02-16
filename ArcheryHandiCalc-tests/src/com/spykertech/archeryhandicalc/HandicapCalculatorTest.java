@@ -54,4 +54,20 @@ public class HandicapCalculatorTest extends TestCase {
 		assertEquals(worsterZeroHcapAverage, HandicapCalculator.getWorsterAverageScore(0, 20, 40.64, true), precision);
 		assertEquals(worsterThirtyHcapAverage, HandicapCalculator.getWorsterAverageScore(30, 20, 40.64, true), precision);
 	}
+	
+	public void testGetFITAInnerTenAverageScore() throws Exception {
+		double compoundPortsmouthZeroHcapAverage = 9.808701;
+		double compoundPortsmouth30HcapAverage = 9.071339;
+
+		assertEquals(compoundPortsmouthZeroHcapAverage, HandicapCalculator.getFITAInnerTenAverageScore(0, 20, 60, true), precision);
+		assertEquals(compoundPortsmouth30HcapAverage, HandicapCalculator.getFITAInnerTenAverageScore(30, 20, 60, true), precision);
+	}
+	
+	public void testGetFiveZoneInnerTenAverageScore() throws Exception {
+		double compoundPortsmouthZeroHcapAverage = 9.808701;
+		double compoundPortsmouth30HcapAverage = 9.071332;
+
+		assertEquals(compoundPortsmouthZeroHcapAverage, HandicapCalculator.getFiveZoneInnerTenAverageScore(0, 20, 60, true), precision);
+		assertEquals(compoundPortsmouth30HcapAverage, HandicapCalculator.getFiveZoneInnerTenAverageScore(30, 20, 60, true), precision);
+	}
 }
