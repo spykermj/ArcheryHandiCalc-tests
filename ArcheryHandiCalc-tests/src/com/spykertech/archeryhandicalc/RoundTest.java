@@ -14,4 +14,12 @@ public class RoundTest extends TestCase {
 		Round round = new Round(roundName);
 		assertSame(roundName, round.toString());
 	}
+	
+	public void testAddDistance() throws Exception {
+		boolean isMeters = false;
+		int arrows = 60;
+		Distance dist = new Distance(20.0, TargetFace.FITA60, ScoringStyle.TEN_ZONE, isMeters, arrows);
+		Round round = new Round("Portsmouth");
+		round.addDistance(dist);
+	}
 }
