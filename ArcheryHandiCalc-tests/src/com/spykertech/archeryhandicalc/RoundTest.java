@@ -70,4 +70,14 @@ public class RoundTest extends TestCase {
 		york.addDistance(dist);
 		assertEquals(41, york.lookupHandicap(792));		
 	}
+	
+	public void testCompareTo() throws Exception {
+		Round albion = new Round("Albion");
+		Round albion2 = new Round("Albion");
+		Round york = new Round("York");
+		
+		assertEquals(0, albion.compareTo(albion2));
+		assertTrue(albion.compareTo(york) < 0);
+		assertTrue(york.compareTo(albion) > 0);
+	}
 }
