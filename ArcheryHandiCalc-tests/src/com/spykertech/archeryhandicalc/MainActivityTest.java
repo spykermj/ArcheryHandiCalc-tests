@@ -15,6 +15,11 @@ public class MainActivityTest extends TestCase {
 				expectedHandicap = 100;
 				assertEquals(expectedHandicap, round.lookupHandicap(8));
 			}
+			
+			if(round.toString() == "Portsmouth") {
+				int expectedHandicap = 1;
+				assertEquals(expectedHandicap, round.lookupHandicap(600));
+			}
 		}
 	}
 }
