@@ -60,6 +60,18 @@ public class RoundTest extends TestCase {
 		assertEquals(1, table[100]);
 	}
 	
+	public void testGetMaxScore() throws Exception {
+		int expectedMaxScore = 1296;
+		Round york = new Round("York");
+		Distance dist = new Distance(100, TargetFace.FITA122, ScoringStyle.IMPERIAL, false, 72);
+		york.addDistance(dist);
+		dist = new Distance(80, TargetFace.FITA122, ScoringStyle.IMPERIAL, false, 48);
+		york.addDistance(dist);
+		dist = new Distance(60, TargetFace.FITA122, ScoringStyle.IMPERIAL, false, 24);
+		york.addDistance(dist);
+		assertEquals(expectedMaxScore, york.getMaxScore());
+	}
+	
 	public void testLookupHandicap() throws Exception {
 		Round york = new Round("York");
 		Distance dist = new Distance(100, TargetFace.FITA122, ScoringStyle.IMPERIAL, false, 72);

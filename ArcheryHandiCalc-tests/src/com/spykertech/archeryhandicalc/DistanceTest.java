@@ -23,4 +23,10 @@ public class DistanceTest extends TestCase {
 		portsmouth = new Distance(20, TargetFace.FITA60, ScoringStyle.WORCESTER, false, 60);
 		assertEquals(expectedScore, portsmouth.getHandicapScore(31));
 	}
+	
+	public void testGetMaxScore() throws Exception {
+		Distance portsmouth = new Distance(20, TargetFace.FITA60, ScoringStyle.TEN_ZONE, false, 60);
+		int expectedMaxScore = 600;
+		assertEquals(expectedMaxScore, portsmouth.getMaxScore());
+	}
 }
